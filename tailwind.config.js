@@ -11,8 +11,9 @@ module.exports = {
         "dark-700": "#252525",
         "dark-100": "#7C7B7B",
         "white-400": "#EDEDED",
+        "white-700": "#767676",
         "blue-400": "#BAD2FF",
-        "blue-600": "#6F7F9B"
+        "blue-600": "#6F7F9B",
       },
       fontSize: {
         8: "8px",

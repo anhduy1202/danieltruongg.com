@@ -3,13 +3,14 @@ import Image from "next/image";
 import Memomji from "../../images/memoji.png";
 import React from "react";
 import Link from "next/link";
+import Heading1 from "../Heading/Heading";
 
 const Greeting: React.FC = () => {
   return (
     <section className="font-bold mt-[9em] text-center">
       <div className="text-34">Xin chao, </div>
       <div className="text-34">
-        I'm <span className="text-blue-400"> Daniel Truong </span>{" "}
+        I'm <Heading1 content="Daniel Truong"/>
       </div>
       <div className="text-14 mt-3">
         CSUF'24 | Software Engineer | Graphic Designer
