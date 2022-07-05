@@ -4,9 +4,8 @@ type Spacing1Props = {
   children?: React.ReactNode;
 };
 
-const Spacing1: React.FC<Spacing1Props> = (props) => {
+export const Spacing1: React.FC<Spacing1Props> = (props) => {
   const { children } = props;
-  return <div className="border-t-[2px] border-white-700 mt-48 flex justify-center">{children}</div>;
+  return <div className="border-t-[2px] border-white-700 mt-48 flex flex-col items-center">{children}</div>;
 };
 
-export default Spacing1;

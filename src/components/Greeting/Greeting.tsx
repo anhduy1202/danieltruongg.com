@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
-import Memomji from "../../images/memoji.png";
 import React from "react";
 import Link from "next/link";
 import Heading1 from "../Heading/Heading";
@@ -10,13 +9,18 @@ const Greeting: React.FC = () => {
     <section className="font-bold mt-[9em] text-center">
       <div className="text-34">Xin chao, </div>
       <div className="text-34">
-        I'm <Heading1 content="Daniel Truong"/>
+        I'm <Heading1 content="Daniel Truong" />
       </div>
       <div className="text-14 mt-3">
         CSUF'24 | Software Engineer | Graphic Designer
       </div>
       <div className="mt-9">
-        <Image src={Memomji} alt="A 3D Picture of Daniel Truong" />
+        <Image
+          width={115}
+          height={115}
+          src="/memoji.png"
+          alt="A 3D Picture of Daniel Truong"
+        />
       </div>
       <div className="flex justify-center mt-10">
         <Link href="https://drive.google.com/file/d/1lB359tfZ9GlfPEDHKpD2R3Db5-AJi9v7/view?usp=sharing">

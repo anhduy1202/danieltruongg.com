@@ -5,14 +5,15 @@ export interface navLink {
   href: string;
 }
 
-type languageType = {
+export type languageType = {
   name: string;
-  icon: StaticImageData;
+  icon: string;
 };
 
 export interface projectType {
   id: number;
-  thumbnail: StaticImageData;
+  thumbnail: string;
+  link: string;
   title: string;
   languages: languageType[];
   description: string;
