@@ -18,3 +18,11 @@ export interface projectType {
   languages: languageType[];
   description: string;
 }
+
+export interface experienceType {
+  id: string,
+  title: string,
+  role: string,
+  date: string,
+  description: string
+}

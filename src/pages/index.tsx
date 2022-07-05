@@ -7,7 +7,10 @@ import Greeting from "../components/Greeting/Greeting";
 import NavBar from "../components/NavBar/NavBar";
 import Projects from "../components/Projects/Projects";
 
-const Home: NextPage = ({projectData}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home: NextPage = ({
+  projectData,
+  expData,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <section>
       <Head>
@@ -17,17 +20,20 @@ const Home: NextPage = ({projectData}: InferGetStaticPropsType<typeof getStaticP
       <NavBar />
       <Greeting />
       <Projects projects={projectData} />
-      <About/>
-      <Experience/>
+      <About />
+      <Experience experiences={expData} />
     </section>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await axios.get("http://localhost:3000/api/projects");
+  const resExp = await axios.get("http://localhost:3000/api/experience");
+
   return {
     props: {
       projectData: res.data,
+      expData: resExp.data,
     },
   };
 };
