@@ -1,6 +1,8 @@
 import axios from "axios";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
+import About from "../components/About/About";
+import Experience from "../components/Experience/Experience";
 import Greeting from "../components/Greeting/Greeting";
 import NavBar from "../components/NavBar/NavBar";
 import Projects from "../components/Projects/Projects";
@@ -15,6 +17,8 @@ const Home: NextPage = ({projectData}: InferGetStaticPropsType<typeof getStaticP
       <NavBar />
       <Greeting />
       <Projects projects={projectData} />
+      <About/>
+      <Experience/>
     </section>
   );
 };

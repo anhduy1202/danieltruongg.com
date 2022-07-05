@@ -1,4 +1,3 @@
-import { StaticImageData } from "next/image";
 
 export interface navLink {
   title: string;
@@ -6,6 +5,7 @@ export interface navLink {
 }
 
 export type languageType = {
+  key: string,
   name: string;
   icon: string;
 };

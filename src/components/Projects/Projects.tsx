@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { languageType, projectType } from "../../interface/interface";
-import { Heading1 } from "../Heading/Heading";
+import { Heading1, Heading2, Heading3 } from "../Heading/Heading";
 import { Spacing1 } from "../Spacing/Spacing";
 
 interface projectsProps {
@@ -28,6 +28,13 @@ const Projects: React.FC<projectsProps> = (props) => {
             </div>
           );
         })}
+        <div className="mt-4">
+          <Link href="https://github.com/anhduy1202">
+            <a target="_blank">
+              <Heading2 content="See more in my Github" />
+            </a>
+          </Link>
+        </div>
       </>
     </Spacing1>
   );
@@ -55,9 +62,38 @@ const Project: React.FC<projectProps> = (props) => {
           />
         </a>
       </Link>
-      <p> {title} </p>
-      <p> {description} </p>
+      <div className="flex text-start mx-4 flex-col">
+        <Heading2 content={title} />
+        <div className="flex flex-wrap text-8 font-bold">
+          {languages.map((language, id) => {
+            return (
+              <div
+                key={language.key}
+                className="flex mr-2 mb-2 bg-blue-400 py-1 px-2 rounded-md"
+              >
+                <Language name={language.name} icon={language.icon} />
+              </div>
+            );
+          })}
+        </div>
+        <Heading3 content={description} />
+      </div>
     </section>
+  );
+};
+
+interface languageProps {
+  name: string;
+  icon: string;
+}
+
+const Language: React.FC<languageProps> = (props) => {
+  const { name, icon } = props;
+  return (
+    <>
+      <Image src={icon} alt="language icon" width={14} height={14} />
+      <p className="ml-1"> {name} </p>
+    </>
   );
 };
 
