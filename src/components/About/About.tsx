@@ -24,23 +24,14 @@ const About: React.FC<aboutProps> = (props) => {
       <Heading1 content="About" />
       <div className="flex md:w-[80%] flex-col items-center md:flex-row">
         <div id="about" className="mt-10 md:mr-10 md:mb-10">
-          {isDesktop ? (
-            <Image
-              src="/avatar_desktop.png"
-              alt="Daniel Truong's avatar"
-              width={180}
-              height={180}
-            />
-          ) : (
-            <Image
-              src="/avatar.png"
-              alt="Daniel Truong's avatar"
-              width={80}
-              height={80}
-            />
-          )}
+          <Image
+            src="/avatar_desktop.png"
+            alt="Daniel Truong's avatar"
+            width={isDesktop ? 180 : 80}
+            height={isDesktop ? 180 : 80}
+          />
         </div>
-          <Paragraph1 content={content} />
+        <Paragraph1 content={content} />
       </div>
     </Spacing2>
   );

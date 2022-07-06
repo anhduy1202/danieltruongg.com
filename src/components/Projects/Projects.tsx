@@ -19,7 +19,10 @@ const Projects: React.FC<projectsProps> = (props) => {
         <div className="md:flex md:flex-wrap md:items-center md:justify-center">
           {projects.map((project) => {
             return (
-              <div key={project.id} className="md:flex-[33%] md:items-center md:justify-center">
+              <div
+                key={project.id}
+                className="md:flex-[33%] md:items-center md:justify-center"
+              >
                 <Project
                   isDesktop={isDesktop}
                   link={project.link}
@@ -61,25 +64,16 @@ const Project: React.FC<projectProps> = (props) => {
   return (
     <section
       id="projects"
-      className="mt-10 text-center bg-white-400 text-dark-700 mx-[31px] rounded-xl cursor-pointer max-w-[300px] md:max-w-[500px] md:min-w-[300px] md:min-h-[490px] md:max-h-[490px]"
+      className="mt-10 relative text-center bg-white-400 text-dark-700 mx-[31px] rounded-xl cursor-pointer max-w-[300px] md:max-w-[500px] md:min-w-[300px] md:min-h-[490px] md:max-h-[490px]"
     >
       <Link href={link}>
         <a target="_blank">
-          {isDesktop ? (
-            <Image
-              src={desktop}
-              width="625"
-              height="324"
-              alt="cover image of my project"
-            />
-          ) : (
-            <Image
-              src={image}
-              width="320"
-              height="149"
-              alt="cover image of my project"
-            />
-          )}
+          <Image
+            src={isDesktop ? desktop : image}
+            width={isDesktop ? "625" : "320"}
+            height={isDesktop ? "324" : "149"}
+            alt="cover image of my project"
+          />
         </a>
       </Link>
       <div className="flex text-start mx-4 flex-col">
@@ -101,6 +95,13 @@ const Project: React.FC<projectProps> = (props) => {
           })}
         </div>
         <Heading3 content={description} />
+        <div className="w-[100%] text-12 text-white-400 p-[2px] md:rounded-b-md md:p-1 text-center absolute bottom-0 right-0 font-semibold bg-dark-400 hover:bg-white-700 transition-colors duration-300 md:text-16">
+          <Link href={link}>
+            <a target="_blank">
+              <p> View in Github </p>
+            </a>
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -116,11 +117,12 @@ const Language: React.FC<languageProps> = (props) => {
   const { name, icon, isDesktop } = props;
   return (
     <>
-      {isDesktop ? (
-        <Image src={icon} alt="language icon" width={20} height={20} />
-      ) : (
-        <Image src={icon} alt="language icon" width={14} height={14} />
-      )}
+      <Image
+        src={icon}
+        alt="language icon"
+        width={isDesktop ? 20 : 14}
+        height={isDesktop ? 20 : 14}
+      />
       <p className="ml-1 md:text-14"> {name} </p>
     </>
   );
