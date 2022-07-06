@@ -1,11 +1,10 @@
-
 export interface navLink {
   title: string;
   href: string;
 }
 
 export type languageType = {
-  key: string,
+  key: string;
   name: string;
   icon: string;
 };
@@ -20,10 +19,16 @@ export interface projectType {
 }
 
 export interface experienceType {
-  id: string,
-  companies: string,
-  role: string,
-  date: string,
-  description: string[]
-  link: string
+  id: string;
+  companies: string;
+  role: string;
+  date: string;
+  description: string[];
+  link: string;
+}
+
+export interface contactType {
+  id: string;
+  link: string;
+  logo: string;
 }

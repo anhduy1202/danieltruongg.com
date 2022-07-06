@@ -17,7 +17,7 @@ export const Heading1: React.FC<headingProps> = (props) => {
 
 export const Heading2: React.FC<headingProps> = (props) => {
   const { content } = props;
-  return <p className="text-15 my-2 font-semibold"> {content} </p>;
+  return <p className="text-15 my-2 font-semibold text-center"> {content} </p>;
 };
 
 export const Heading3: React.FC<headingProps> = (props) => {
