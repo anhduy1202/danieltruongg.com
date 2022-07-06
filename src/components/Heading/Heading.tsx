@@ -42,7 +42,7 @@ export const Paragraph2: React.FC<paragraphProps> = (props) => {
 
 export const Paragraph3: React.FC<paragraphProps> = (props) => {
   const { content } = props;
-  return <p className="text-12 mt-2 text-white-600 font-semibold text-start"> {content} </p>;
+  return <p className="text-12 mt-2 text-white-600 text-start"> {content} </p>;
 };
 
 export default Heading1;

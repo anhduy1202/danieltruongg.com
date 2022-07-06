@@ -25,4 +25,5 @@ export interface experienceType {
   role: string,
   date: string,
   description: string[]
+  link: string
 }
