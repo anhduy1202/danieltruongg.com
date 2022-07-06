@@ -5,7 +5,7 @@ interface headingProps {
 }
 
 interface paragraphProps {
-  content: JSX.Element;
+  content: JSX.Element | string;
 }
 
 export const Heading1: React.FC<headingProps> = (props) => {
@@ -28,6 +28,21 @@ export const Heading3: React.FC<headingProps> = (props) => {
 export const Paragraph1: React.FC<paragraphProps> = (props) => {
   const { content } = props;
   return <p className="text-14 my-8 font-semibold text-center"> {content} </p>;
+};
+
+export const Paragraph0: React.FC<paragraphProps> = (props) => {
+  const { content } = props;
+  return <p className="text-16 mt-8 font-semibold text-start"> {content} </p>;
+};
+
+export const Paragraph2: React.FC<paragraphProps> = (props) => {
+  const { content } = props;
+  return <p className="text-14 mt-4 text-white-600 font-semibold text-start"> {content} </p>;
+};
+
+export const Paragraph3: React.FC<paragraphProps> = (props) => {
+  const { content } = props;
+  return <p className="text-12 mt-2 text-white-600 font-semibold text-start"> {content} </p>;
 };
 
 export default Heading1;

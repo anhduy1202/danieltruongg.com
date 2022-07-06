@@ -12,7 +12,9 @@ module.exports = {
         "dark-100": "#7C7B7B",
         "white-400": "#EDEDED",
         "white-700": "#767676",
+        "white-600": "#D2D2D2",
         "blue-400": "#BAD2FF",
+        "blue-500": "#64B5E4",
         "blue-600": "#6F7F9B",
       },
       fontSize: {

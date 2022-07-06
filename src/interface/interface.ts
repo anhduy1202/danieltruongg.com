@@ -21,8 +21,8 @@ export interface projectType {
 
 export interface experienceType {
   id: string,
-  title: string,
+  companies: string,
   role: string,
   date: string,
-  description: string
+  description: string[]
 }
