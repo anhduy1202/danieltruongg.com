@@ -9,7 +9,7 @@ export const experiences: experienceType[] = [
     link: "https://www.fullerton.edu/projectraise/",
     description: [
       "💙 Peer advising 70 STEM transfer students from multiple community colleges with the goal to create a community through educational and social events",
-      "💙 Participated in helping students with their undergraduate research program for Summer 2022",
+      "💙 Participated in helping students with their undergraduate research program for Summer 2022 along with principal instructors",
     ],
   },
   {

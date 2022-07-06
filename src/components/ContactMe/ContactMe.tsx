@@ -7,10 +7,11 @@ import { Spacing2 } from "../Spacing/Spacing";
 
 interface contactProps {
   contacts: contactType[];
+  isDesktop: boolean;
 }
 
 const ContactMe: React.FC<contactProps> = (props) => {
-  const { contacts } = props;
+  const { contacts, isDesktop } = props;
   return (
     <Spacing2>
       <Heading1 content="Contact Me" />
@@ -19,12 +20,12 @@ const ContactMe: React.FC<contactProps> = (props) => {
         {contacts.map((contact) => {
           return (
             <div key={contact.id} className="mx-5">
-              <SocialList logo={contact.logo} link={contact.link} />
+              <SocialList isDesktop={isDesktop} logo={contact.logo} link={contact.link} />
             </div>
           );
         })}
       </section>
-      <Footer />
+      <Footer/>
     </Spacing2>
   );
 };
@@ -32,14 +33,15 @@ const ContactMe: React.FC<contactProps> = (props) => {
 interface socialProps {
   logo: string;
   link: string;
+  isDesktop: boolean;
 }
 
 const SocialList: React.FC<socialProps> = (props) => {
-  const { logo, link } = props;
+  const { logo, link, isDesktop } = props;
   return (
     <Link href={link}>
       <a target="_blank" className="cursor-pointer">
-        <Image src={logo} width={20} height={20} alt="social icon" />
+        <Image src={logo} width={isDesktop ? 30 : 20} height={isDesktop ? 30 : 20} alt="social icon" />
       </a>
     </Link>
   );
@@ -47,7 +49,7 @@ const SocialList: React.FC<socialProps> = (props) => {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-center text-12 my-6">
+    <footer className="text-center text-12 my-6 md:text-16">
       <p> Designed and made with 💙 by <span className="font-semibold">  Daniel Truong </span></p>
       <p className="font-semibold"> @2022 </p>
     </footer>

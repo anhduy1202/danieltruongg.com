@@ -22,13 +22,13 @@ const Experience: React.FC<expProps> = (props) => {
   return (
     <Spacing2>
       <Heading1 content="Experience" />
-      <div id="experience" className="mt-10 flex flex-col overflow-hidden">
+      <div id="experience" className="mt-10 flex flex-col overflow-hidden md:flex-row md:items-center">
         <NavBar
           company={myCompanies}
           setChoices={setChoices}
           choices={choices}
         />
-        <section className="mt-3 mx-10 flex">
+        <section className="mt-3 mx-10 flex md:mx-0 md:mt-0">
           {experiences.map((experience) => {
             return (
               <div className="text-white-400" key={experience.id}>
@@ -58,7 +58,7 @@ interface navProps {
 const NavBar: React.FC<navProps> = (props) => {
   const { company, setChoices, choices } = props;
   return (
-    <nav className="w-[calc(100vw_-_30px)] mx-10 flex overflow-x-scroll">
+    <nav className="w-[calc(100vw_-_30px)] mx-10 flex overflow-x-scroll md:flex-col md:max-w-[calc(20vw_-_30px)] md:overflow-hidden">
       {company.map((comp, id) => {
         return (
           <button
@@ -70,7 +70,7 @@ const NavBar: React.FC<navProps> = (props) => {
             }
           >
             <span
-              className="text-14"
+              className="text-14 md:text-16"
               onClick={(e) => setChoices(String(e.currentTarget.textContent))}
             >
               {comp}
@@ -97,7 +97,7 @@ const Container: React.FC<containerProps> = (props) => {
     <>
       {`${role}`}
       <Link href={link}>
-        <a target="_blank" className="ml-1 text-16 text-blue-500 font-semibold cursor-pointer">
+        <a target="_blank" className="ml-1 text-16 text-blue-500 font-semibold cursor-pointer hover:text-blue-400 transition-colors duration-300 md:text-20">
             {`@${companies}`}
         </a>
       </Link>

@@ -32,17 +32,17 @@ export const Paragraph1: React.FC<paragraphProps> = (props) => {
 
 export const Paragraph0: React.FC<paragraphProps> = (props) => {
   const { content } = props;
-  return <p className="text-16 mt-8 font-semibold text-start"> {content} </p>;
+  return <p className="text-16 mt-8 font-semibold text-start md:mt-0 md:text-20"> {content} </p>;
 };
 
 export const Paragraph2: React.FC<paragraphProps> = (props) => {
   const { content } = props;
-  return <p className="text-14 mt-4 text-white-600 font-semibold text-start"> {content} </p>;
+  return <p className="text-14 mt-4 text-white-600 font-semibold text-start md:text-16"> {content} </p>;
 };
 
 export const Paragraph3: React.FC<paragraphProps> = (props) => {
   const { content } = props;
-  return <p className="text-12 mt-2 text-white-600 text-start"> {content} </p>;
+  return <p className="text-12 mt-2 text-white-600 text-start md:text-14"> {content} </p>;
 };
 
 export default Heading1;

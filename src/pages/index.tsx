@@ -53,7 +53,7 @@ const Home: NextPage = ({
       <Projects projects={projectData} isDesktop={isDesktop} />
       <About isDesktop={isDesktop} />
       <Experience experiences={expData} />
-      <ContactMe contacts={contactData} />
+      <ContactMe contacts={contactData} isDesktop={isDesktop} />
     </section>
   );
 };
