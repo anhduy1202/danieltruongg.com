@@ -3,47 +3,93 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import Heading1 from "../Heading/Heading";
+import { motion, Variants } from "framer-motion";
 
 interface greetingProps {
   isDesktop: boolean;
 }
 
+export const textVariants: Variants = {
+  offscreen: {
+    x: -200,
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.2,
+      duration: 1.2,
+    },
+  },
+};
+
 const Greeting: React.FC<greetingProps> = (props) => {
   const { isDesktop } = props;
+
   return (
     <section className="font-bold mt-[9em] text-center">
       <div className="md:flex md:justify-center md:items-center">
-        <div className="md:flex md:flex-col">
-          <div className="text-34 md:text-42">Xin chao, </div>
-          <div className="text-34 md:text-42">
+        <motion.div
+          className="md:flex md:flex-col"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true }}
+        >
+          <motion.div className="text-34 md:text-42" variants={textVariants}>
+            Xin chao,
+          </motion.div>
+          <motion.div className="text-34 md:text-42" variants={textVariants}>
             I'm <Heading1 content="Daniel Truong" />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         {isDesktop && (
-          <div className="mt-9 md:absolute md:right-[28%] md:top-[22%]">
+          <motion.div
+            className="mt-9 md:absolute md:right-[28%] md:top-[22%]"
+            initial="offscreen"
+            whileInView="onscreen"
+            variants={textVariants}
+            viewport={{ once: true }}
+          >
             <Image
               width={120}
               height={120}
               src="/memoji.png"
               alt="A 3D Picture of Daniel Truong"
             />
-          </div>
+          </motion.div>
         )}
       </div>
-      <div className="text-14 mt-3 md:text-20">
+      <motion.div
+        className="text-14 mt-3 md:text-20"
+        initial="offscreen"
+        whileInView="onscreen"
+        variants={textVariants}
+      >
         CSUF'24 | Software Engineer | Graphic Designer
-      </div>
+      </motion.div>
       {!isDesktop && (
-        <div className="mt-9">
+        <motion.div
+          className="mt-9"
+          initial="offscreen"
+          whileInView="onscreen"
+          variants={textVariants}
+        >
           <Image
             width={115}
             height={115}
             src="/memoji.png"
             alt="A 3D Picture of Daniel Truong"
           />
-        </div>
+        </motion.div>
       )}
-      <div className="flex justify-center mt-10">
+      <motion.div
+        className="flex justify-center mt-10"
+        initial="offscreen"
+        whileInView="onscreen"
+        variants={textVariants}
+      >
         <Link href="https://drive.google.com/file/d/1EIk0uMP8DSJ5Fnw3wmwl7VjCtlS-ZM4H/view?usp=sharing">
           <a
             target="_blank"
@@ -52,7 +98,7 @@ const Greeting: React.FC<greetingProps> = (props) => {
             My resume
           </a>
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 };

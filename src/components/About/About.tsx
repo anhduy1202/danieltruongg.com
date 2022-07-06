@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
+import { textVariants } from "../Greeting/Greeting";
 import Heading1, { Paragraph1 } from "../Heading/Heading";
 import { Spacing2 } from "../Spacing/Spacing";
 
@@ -21,8 +23,22 @@ const About: React.FC<aboutProps> = (props) => {
   );
   return (
     <Spacing2>
-      <Heading1 content="About" />
-      <div className="flex md:w-[80%] flex-col items-center md:flex-row">
+      <motion.div
+        className="mt-10"
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true }}
+        variants={textVariants}
+      >
+        <Heading1 content="About" />
+      </motion.div>
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true }}
+        variants={textVariants}
+        className="flex md:w-[80%] flex-col items-center md:flex-row"
+      >
         <div id="about" className="mt-10 md:mr-10 md:mb-10">
           <Image
             src="/avatar_desktop.png"
@@ -32,7 +48,7 @@ const About: React.FC<aboutProps> = (props) => {
           />
         </div>
         <Paragraph1 content={content} />
-      </div>
+      </motion.div>
     </Spacing2>
   );
 };

@@ -1,7 +1,9 @@
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { languageType, projectType } from "../../interface/interface";
+import { textVariants } from "../Greeting/Greeting";
 import { Heading1, Heading2, Heading3 } from "../Heading/Heading";
 import { Spacing1 } from "../Spacing/Spacing";
 
@@ -10,12 +12,35 @@ interface projectsProps {
   isDesktop: boolean;
 }
 
+const projectVariant: Variants = {
+  offscreen: {
+    y: 300,
+  },
+  onscreen: {
+    y: 50,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 1,
+    },
+  },
+};
+
 const Projects: React.FC<projectsProps> = (props) => {
   const { projects, isDesktop } = props;
+
   return (
     <Spacing1>
       <>
-        <Heading1 content="Projects" />
+        <motion.div
+          className="mt-10"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true }}
+          variants={textVariants}
+        >
+          <Heading1 content="Projects" />
+        </motion.div>
         <div className="md:flex md:flex-wrap md:items-center md:justify-center">
           {projects.map((project) => {
             return (
@@ -62,18 +87,23 @@ const Project: React.FC<projectProps> = (props) => {
   const { image, link, title, desktop, languages, description, isDesktop } =
     props;
   return (
-    <section
+    <motion.div
       id="projects"
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true }}
+      variants={projectVariant}
+      whileHover={{ scale: 1.1 }} whileTap={{ scale: 1 }}
       className="mt-10 relative text-center bg-white-400 text-dark-700 mx-[31px] rounded-xl cursor-pointer max-w-[300px] md:max-w-[500px] md:min-w-[300px] md:min-h-[490px] md:max-h-[490px]"
     >
       <Link href={link}>
         <a target="_blank">
-          <Image
-            src={isDesktop ? desktop : image}
-            width={isDesktop ? "625" : "320"}
-            height={isDesktop ? "324" : "149"}
-            alt="cover image of my project"
-          />
+            <Image
+              src={isDesktop ? desktop : image}
+              width={isDesktop ? "625" : "320"}
+              height={isDesktop ? "324" : "149"}
+              alt="cover image of my project"
+            />
         </a>
       </Link>
       <div className="flex text-start mx-4 flex-col">
@@ -98,12 +128,17 @@ const Project: React.FC<projectProps> = (props) => {
         <div className="w-[100%] text-12 text-white-400 p-[2px] md:rounded-b-md md:p-1 text-center absolute bottom-0 right-0 font-semibold bg-dark-400 hover:bg-white-700 transition-colors duration-300 md:text-16">
           <Link href={link}>
             <a target="_blank">
-              <p> View in Github </p>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                View in Github
+              </motion.button>
             </a>
           </Link>
         </div>
       </div>
-    </section>
+    </motion.div>
   );
 };
 

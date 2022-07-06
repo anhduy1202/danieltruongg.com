@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 import { contactType } from "../../interface/interface";
 import Heading1, { Heading2 } from "../Heading/Heading";
 import { Spacing2 } from "../Spacing/Spacing";
+import { textVariants } from "../Greeting/Greeting";
 
 interface contactProps {
   contacts: contactType[];
@@ -14,18 +16,43 @@ const ContactMe: React.FC<contactProps> = (props) => {
   const { contacts, isDesktop } = props;
   return (
     <Spacing2>
-      <Heading1 content="Contact Me" />
-      <Heading2 content="Currently active looking for Summer 2023 Software Engineer internship" />
-      <section id="contact" className="flex my-6 justify-center w-screen">
-        {contacts.map((contact) => {
-          return (
-            <div key={contact.id} className="mx-5">
-              <SocialList isDesktop={isDesktop} logo={contact.logo} link={contact.link} />
-            </div>
-          );
-        })}
-      </section>
-      <Footer/>
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true }}
+        variants={textVariants}
+      >
+        <Heading1 content="Contact Me" />
+      </motion.div>
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true }}
+        variants={textVariants}
+      >
+        <Heading2 content="Currently active looking for Summer 2023 Software Engineer internship" />
+      </motion.div>
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true }}
+        variants={textVariants}
+      >
+        <section id="contact" className="flex my-6 justify-center w-screen">
+          {contacts.map((contact) => {
+            return (
+              <div key={contact.id} className="mx-5">
+                <SocialList
+                  isDesktop={isDesktop}
+                  logo={contact.logo}
+                  link={contact.link}
+                />
+              </div>
+            );
+          })}
+        </section>
+        <Footer />
+      </motion.div>
     </Spacing2>
   );
 };
@@ -41,7 +68,12 @@ const SocialList: React.FC<socialProps> = (props) => {
   return (
     <Link href={link}>
       <a target="_blank" className="cursor-pointer">
-        <Image src={logo} width={isDesktop ? 30 : 20} height={isDesktop ? 30 : 20} alt="social icon" />
+        <Image
+          src={logo}
+          width={isDesktop ? 30 : 20}
+          height={isDesktop ? 30 : 20}
+          alt="social icon"
+        />
       </a>
     </Link>
   );
@@ -50,7 +82,11 @@ const SocialList: React.FC<socialProps> = (props) => {
 const Footer: React.FC = () => {
   return (
     <footer className="text-center text-12 my-6 md:text-16">
-      <p> Designed and made with 💙 by <span className="font-semibold">  Daniel Truong </span></p>
+      <p>
+        {" "}
+        Designed and made with 💙 by{" "}
+        <span className="font-semibold"> Daniel Truong </span>
+      </p>
       <p className="font-semibold"> @2022 </p>
     </footer>
   );

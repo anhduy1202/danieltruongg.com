@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { motion, Variants } from "framer-motion";
 import React, { useState } from "react";
 import { experienceType } from "../../interface/interface";
 import Heading1, {
@@ -7,10 +8,27 @@ import Heading1, {
   Paragraph3,
 } from "../Heading/Heading";
 import { Spacing2 } from "../Spacing/Spacing";
+import { textVariants } from "../Greeting/Greeting";
 
 interface expProps {
   experiences: experienceType[];
 }
+
+const expVariant: Variants = {
+  offscreen: {
+    x: 300,
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.2,
+      duration: 0.8,
+    },
+  },
+};
 
 const Experience: React.FC<expProps> = (props) => {
   const { experiences } = props;
@@ -21,8 +39,23 @@ const Experience: React.FC<expProps> = (props) => {
   const [choices, setChoices] = useState(String(myCompanies[0]));
   return (
     <Spacing2>
-      <Heading1 content="Experience" />
-      <div id="experience" className="mt-10 flex flex-col overflow-hidden md:flex-row md:items-center">
+      <motion.div
+        className="mt-10"
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true }}
+        variants={textVariants}
+      >
+        <Heading1 content="Experience" />
+      </motion.div>
+      <motion.div
+        id="experience"
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true }}
+        variants={textVariants}
+        className="mt-10 flex flex-col overflow-hidden md:flex-row md:items-center"
+      >
         <NavBar
           company={myCompanies}
           setChoices={setChoices}
@@ -44,7 +77,7 @@ const Experience: React.FC<expProps> = (props) => {
             );
           })}
         </section>
-      </div>
+      </motion.div>
     </Spacing2>
   );
 };
@@ -97,8 +130,11 @@ const Container: React.FC<containerProps> = (props) => {
     <>
       {`${role}`}
       <Link href={link}>
-        <a target="_blank" className="ml-1 text-16 text-blue-500 font-semibold cursor-pointer hover:text-blue-400 transition-colors duration-300 md:text-20">
-            {`@${companies}`}
+        <a
+          target="_blank"
+          className="ml-1 text-16 text-blue-500 font-semibold cursor-pointer hover:text-blue-400 transition-colors duration-300 md:text-20"
+        >
+          {`@${companies}`}
         </a>
       </Link>
     </>
@@ -106,7 +142,13 @@ const Container: React.FC<containerProps> = (props) => {
   return (
     <>
       {companies === choices && (
-        <div className="flex flex-col items-start">
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true }}
+          variants={expVariant}
+          className="flex flex-col items-start"
+        >
           <Paragraph0 content={companiesTag} />
           <Paragraph3 content={date} />
           {description.map((desc, id) => {
@@ -116,7 +158,7 @@ const Container: React.FC<containerProps> = (props) => {
               </div>
             );
           })}
-        </div>
+        </motion.div>
       )}
     </>
   );
