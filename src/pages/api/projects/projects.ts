@@ -4,6 +4,7 @@ export const projects: projectType[] = [
   {
     id: 1,
     thumbnail: "/spotify.png",
+    desktop: "/spotify_desktop.jpg",
     link: "https://github.com/anhduy1202/Spotify-Recommendation-Systems",
     title: "Songs Recommendation System",
     languages: [
@@ -24,6 +25,7 @@ export const projects: projectType[] = [
   {
     id: 2,
     thumbnail: "/devwork.png",
+    desktop: "/devwork_desktop.jpg",
     link: "",
     title: "DevWork",
     languages: [
@@ -39,6 +41,7 @@ export const projects: projectType[] = [
   {
     id: 3,
     thumbnail: "/tuffyfood.png",
+    desktop: "/tuffyfood_desktop.jpg",
     link: "https://github.com/anhduy1202/TuffyFood",
     title: "Tuffy Food",
     languages: [
@@ -54,6 +57,7 @@ export const projects: projectType[] = [
   {
     id: 4,
     thumbnail: "/reddat.png",
+    desktop: "/reddat_desktop.jpg",
     link: "https://github.com/anhduy1202/Not-Reddit",
     title: "Reddat",
     languages: [
@@ -84,6 +88,7 @@ export const projects: projectType[] = [
   {
     id: 5,
     thumbnail: "/gitreadme.png",
+    desktop: "/gitreadme_desktop.jpg",
     link: "https://github.com/anhduy1202/Git-Readme",
     title: "Git Readme",
     languages: [
@@ -100,6 +105,7 @@ export const projects: projectType[] = [
     id: 6,
     thumbnail: "/betterttt.png",
     link: "https://github.com/anhduy1202/better-tic-tac-toe-client",
+    desktop: "/betterttt-desktop.jpg",
     title: "Better Tic-Tac-Toe",
     languages: [
       {

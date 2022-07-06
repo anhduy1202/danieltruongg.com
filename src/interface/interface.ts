@@ -12,6 +12,7 @@ export type languageType = {
 export interface projectType {
   id: number;
   thumbnail: string;
+  desktop: string;
   link: string;
   title: string;
   languages: languageType[];

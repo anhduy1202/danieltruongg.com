@@ -1,6 +1,7 @@
 import axios from "axios";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import About from "../components/About/About";
 import ContactMe from "../components/ContactMe/ContactMe";
 import Experience from "../components/Experience/Experience";
@@ -15,6 +16,32 @@ const Home: NextPage = ({
   expData,
   contactData,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const [windowSize, setWindowSize] = useState<any>({
+    width: undefined,
+    height: undefined,
+  });
+  const [isDesktop, setDesktop] = useState(false);
+
+  useEffect(() => {
+    const handleSize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        heigth: window.innerHeight,
+      });
+    };
+    window.addEventListener("resize", handleSize);
+    handleSize();
+    return () => window.removeEventListener("resize", handleSize);
+  }, []);
+
+  useEffect(() => {
+    if (windowSize.width >= 768) {
+      setDesktop(true);
+    } else {
+      setDesktop(false);
+    }
+  }),[windowSize];
+
   return (
     <section>
       <Head>
@@ -22,9 +49,9 @@ const Home: NextPage = ({
         <meta property="og:title" content="Daniel Truong" key="title" />
       </Head>
       <NavBar />
-      <Greeting />
-      <Projects projects={projectData} />
-      <About />
+      <Greeting isDesktop={isDesktop}/>
+      <Projects projects={projectData} isDesktop={isDesktop} />
+      <About isDesktop={isDesktop} />
       <Experience experiences={expData} />
       <ContactMe contacts={contactData} />
     </section>

@@ -33,7 +33,7 @@ const links: navLink[] = [
 const NavBar: React.FC = () => {
   return (
     <nav>
-      <ul className="flex flex-row justify-between font-bold">
+      <ul className="flex flex-row justify-between font-bold md:text-20 md:justify-center md:gap-20 md:bg-white/10 md:p-4 md:rounded-lg">
         {links.map((link, id) => {
           return (
             <Link

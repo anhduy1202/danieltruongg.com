@@ -3,7 +3,12 @@ import React from "react";
 import Heading1, { Paragraph1 } from "../Heading/Heading";
 import { Spacing2 } from "../Spacing/Spacing";
 
-const About: React.FC = () => {
+interface aboutProps {
+  isDesktop: boolean;
+}
+
+const About: React.FC<aboutProps> = (props) => {
+  const { isDesktop } = props;
   const content = (
     <>
       I’m an international student from Vietnam who grows a passion with
@@ -17,15 +22,26 @@ const About: React.FC = () => {
   return (
     <Spacing2>
       <Heading1 content="About" />
-      <div id="about" className="mt-10">
-        <Image
-          src="/avatar.png"
-          alt="Daniel Truong's avatar"
-          width={80}
-          height={80}
-        />
+      <div className="flex md:w-[80%] flex-col items-center md:flex-row">
+        <div id="about" className="mt-10 md:mr-10 md:mb-10">
+          {isDesktop ? (
+            <Image
+              src="/avatar_desktop.png"
+              alt="Daniel Truong's avatar"
+              width={180}
+              height={180}
+            />
+          ) : (
+            <Image
+              src="/avatar.png"
+              alt="Daniel Truong's avatar"
+              width={80}
+              height={80}
+            />
+          )}
+        </div>
+          <Paragraph1 content={content} />
       </div>
-      <Paragraph1 content={content} />
     </Spacing2>
   );
 };
