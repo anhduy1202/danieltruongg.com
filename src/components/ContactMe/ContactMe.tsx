@@ -15,7 +15,7 @@ const ContactMe: React.FC<contactProps> = (props) => {
     <Spacing2>
       <Heading1 content="Contact Me" />
       <Heading2 content="Currently active looking for Summer 2023 Software Engineer internship" />
-      <section className="flex my-6 justify-center w-screen">
+      <section id="contact" className="flex my-6 justify-center w-screen">
         {contacts.map((contact) => {
           return (
             <div key={contact.id} className="mx-5">

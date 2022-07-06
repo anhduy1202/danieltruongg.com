@@ -22,7 +22,7 @@ const Experience: React.FC<expProps> = (props) => {
   return (
     <Spacing2>
       <Heading1 content="Experience" />
-      <div className="mt-10 flex flex-col overflow-hidden">
+      <div id="experience" className="mt-10 flex flex-col overflow-hidden">
         <NavBar
           company={myCompanies}
           setChoices={setChoices}

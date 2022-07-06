@@ -51,7 +51,7 @@ interface projectProps {
 const Project: React.FC<projectProps> = (props) => {
   const { image, link, title, languages, description } = props;
   return (
-    <section className="mt-10 text-center bg-white-400 text-dark-700 mx-[31px] rounded-xl cursor-pointer">
+    <section id="projects" className="mt-10 text-center bg-white-400 text-dark-700 mx-[31px] rounded-xl cursor-pointer">
       <Link href={link}>
         <a target="_blank">
           <Image

@@ -17,7 +17,7 @@ const About: React.FC = () => {
   return (
     <Spacing2>
       <Heading1 content="About" />
-      <div className="mt-10">
+      <div id="about" className="mt-10">
         <Image
           src="/avatar.png"
           alt="Daniel Truong's avatar"
