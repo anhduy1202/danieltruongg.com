@@ -23,7 +23,7 @@ const Greeting: React.FC = () => {
         />
       </div>
       <div className="flex justify-center mt-10">
-        <Link href="https://drive.google.com/file/d/1lB359tfZ9GlfPEDHKpD2R3Db5-AJi9v7/view?usp=sharing">
+        <Link href="https://drive.google.com/file/d/1EIk0uMP8DSJ5Fnw3wmwl7VjCtlS-ZM4H/view?usp=sharing">
           <a
             target="_blank"
             className="text-dark-700 bg-blue-400 p-2 rounded-[8px] cursor-pointer hover:bg-blue-600 hover:text-white transition-all duration-300"
