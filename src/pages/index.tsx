@@ -1,5 +1,9 @@
 import axios from "axios";
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import type {
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+  NextPage,
+} from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import About from "../components/About/About";
@@ -9,13 +13,13 @@ import Greeting from "../components/Greeting/Greeting";
 import NavBar from "../components/NavBar/NavBar";
 import Projects from "../components/Projects/Projects";
 
-const rootURL = "http://localhost:3000";
+console.log(process.env.APIURL);
 
 const Home: NextPage = ({
   projectData,
   expData,
   contactData,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const [windowSize, setWindowSize] = useState<any>({
     width: undefined,
     height: undefined,
@@ -40,7 +44,7 @@ const Home: NextPage = ({
     } else {
       setDesktop(false);
     }
-  }),[windowSize];
+  }, [windowSize]);
 
   return (
     <section>
@@ -49,7 +53,7 @@ const Home: NextPage = ({
         <meta property="og:title" content="Daniel Truong" key="title" />
       </Head>
       <NavBar />
-      <Greeting isDesktop={isDesktop}/>
+      <Greeting isDesktop={isDesktop} />
       <Projects projects={projectData} isDesktop={isDesktop} />
       <About isDesktop={isDesktop} />
       <Experience experiences={expData} />
@@ -58,10 +62,10 @@ const Home: NextPage = ({
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const project = await axios.get(`${rootURL}/api/projects`);
-  const exp = await axios.get(`${rootURL}/api/experience`);
-  const contact = await axios.get(`${rootURL}/api/contact`);
+export const getServerSideProps: GetServerSideProps = async () => {
+  const project = await axios.get(`${process.env.APIURL}/api/projects`);
+  const exp = await axios.get(`${process.env.APIURL}/api/experience`);
+  const contact = await axios.get(`${process.env.APIURL}/api/contact`);
   const res = await Promise.all([project, exp, contact]);
   return {
     props: {
