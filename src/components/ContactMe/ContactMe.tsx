@@ -19,6 +19,7 @@ const ContactMe: React.FC<contactProps> = (props) => {
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
+        className="mt-10"
         viewport={{ once: true }}
         variants={textVariants}
       >
@@ -39,7 +40,7 @@ const ContactMe: React.FC<contactProps> = (props) => {
         variants={textVariants}
       >
         <section id="contact" className="flex my-6 justify-center w-screen">
-          {contacts.map((contact) => {
+          {contacts?.map((contact) => {
             return (
               <div key={contact.id} className="mx-5">
                 <SocialList
@@ -83,8 +84,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="text-center text-12 my-6 md:text-16">
       <p>
-        {" "}
-        Designed and made with 💙 by{" "}
+        Designed and made with 💙 by
         <span className="font-semibold"> Daniel Truong </span>
       </p>
       <p className="font-semibold"> @2022 </p>

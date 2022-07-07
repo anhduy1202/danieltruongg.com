@@ -13,8 +13,6 @@ import Greeting from "../components/Greeting/Greeting";
 import NavBar from "../components/NavBar/NavBar";
 import Projects from "../components/Projects/Projects";
 
-console.log(process.env.APIURL);
-
 const Home: NextPage = ({
   projectData,
   expData,
@@ -51,6 +49,15 @@ const Home: NextPage = ({
       <Head>
         <title> Daniel Truong </title>
         <meta property="og:title" content="Daniel Truong" key="title" />
+        <meta property="og:url" content="https://www.danieltruongg.com/face" />
+        <meta property="og:type" content="website" />
+        <meta property="fb:app_id" content="100047357746150" />
+        <meta
+          property="og:description"
+          content="Hello, welcome to my portfolio website @2022"
+        />
+        <meta property="og:image" content="/memoji.png" />
+        <link rel="shortcut icon" href="/memoji.ico" />
       </Head>
       <NavBar />
       <Greeting isDesktop={isDesktop} />

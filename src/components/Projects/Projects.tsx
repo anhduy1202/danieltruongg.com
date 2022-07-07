@@ -42,7 +42,7 @@ const Projects: React.FC<projectsProps> = (props) => {
           <Heading1 content="Projects" />
         </motion.div>
         <div className="md:flex md:flex-wrap md:items-center md:justify-center">
-          {projects.map((project) => {
+          {projects?.map((project) => {
             return (
               <div
                 key={project.id}
@@ -61,7 +61,7 @@ const Projects: React.FC<projectsProps> = (props) => {
             );
           })}
         </div>
-        <div className="mt-4">
+        <div className="mt-16 md:mt-20">
           <Link href="https://github.com/anhduy1202">
             <a target="_blank">
               <Heading2 content="See more in my Github" />

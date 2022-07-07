@@ -33,7 +33,7 @@ const expVariant: Variants = {
 const Experience: React.FC<expProps> = (props) => {
   const { experiences } = props;
   const myCompanies: string[] = [];
-  experiences.map((exp) => {
+  experiences?.map((exp) => {
     myCompanies.push(exp.companies);
   });
   const [choices, setChoices] = useState(String(myCompanies[0]));
@@ -54,15 +54,15 @@ const Experience: React.FC<expProps> = (props) => {
         whileInView="onscreen"
         viewport={{ once: true }}
         variants={textVariants}
-        className="mt-10 flex flex-col overflow-hidden md:flex-row md:items-center"
+        className="mb-[-2.5rem] flex flex-col overflow-hidden md:flex-row md:items-center min-h-[400px]"
       >
         <NavBar
           company={myCompanies}
           setChoices={setChoices}
           choices={choices}
         />
-        <section className="mt-3 mx-10 flex md:mx-0 md:mt-0">
-          {experiences.map((experience) => {
+        <section className="mt-3 mx-12 flex md:mx-0 md:mt-0">
+          {experiences?.map((experience) => {
             return (
               <div className="text-white-400" key={experience.id}>
                 <Container
