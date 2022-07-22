@@ -1,6 +1,8 @@
 # Daniel Truong Porfolio Website 2.0 
 > Designed by Daniel Truong @2022
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a90c1c79-53fb-4651-a746-25a500c52332/deploy-status)](https://app.netlify.com/sites/elegant-borg-d18dab/deploys)
+
 ## Tech Stacks: 
 <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white"> <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"> <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white">
 
