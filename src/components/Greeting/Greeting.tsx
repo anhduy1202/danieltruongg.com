@@ -90,7 +90,7 @@ const Greeting: React.FC<greetingProps> = (props) => {
         whileInView="onscreen"
         variants={textVariants}
       >
-        <Link href="https://drive.google.com/file/d/10rFptH_rAhpcFZoNQMS68Jwf8lCn3ILg/view?usp=sharing">
+        <Link href="https://drive.google.com/file/d/1ldCjHJ30skcOluES4Yu1i0stYd7h7AbJ/view?usp=sharing">
           <a
             target="_blank"
             className="text-dark-700 bg-blue-400 p-2 rounded-[8px] cursor-pointer hover:bg-blue-600 hover:text-white transition-all duration-300 md:text-20"
