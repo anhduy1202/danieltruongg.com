@@ -91,7 +91,7 @@ interface navProps {
 const NavBar: React.FC<navProps> = (props) => {
   const { company, setChoices, choices } = props;
   return (
-    <nav className="w-[calc(100vw_-_30px)] mx-10 flex overflow-x-scroll md:flex-col md:max-w-[calc(20vw_-_30px)] md:overflow-hidden">
+    <nav className="w-[calc(100vw_-_30px)] mt-10 mx-10 flex overflow-x-scroll md:flex-col md:max-w-[calc(20vw_-_30px)] md:mt-0 md:overflow-hidden">
       {company.map((comp, id) => {
         return (
           <button
