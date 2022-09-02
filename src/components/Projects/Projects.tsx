@@ -48,15 +48,19 @@ const Projects: React.FC<projectsProps> = (props) => {
                 key={project.id}
                 className="md:flex-[33%] md:items-center md:justify-center"
               >
-                <Project
-                  isDesktop={isDesktop}
-                  link={project.link}
-                  image={project.thumbnail}
-                  desktop={project.desktop}
-                  title={project.title}
-                  languages={project.languages}
-                  description={project.description}
-                />
+                <Link href={project.link}>
+                  <a target="_blank">
+                    <Project
+                      isDesktop={isDesktop}
+                      link={project.link}
+                      image={project.thumbnail}
+                      desktop={project.desktop}
+                      title={project.title}
+                      languages={project.languages}
+                      description={project.description}
+                    />
+                  </a>
+                </Link>
               </div>
             );
           })}
@@ -93,19 +97,16 @@ const Project: React.FC<projectProps> = (props) => {
       whileInView="onscreen"
       viewport={{ once: true }}
       variants={projectVariant}
-      whileHover={{ scale: 1.1 }} whileTap={{ scale: 1 }}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 1 }}
       className="mt-10 relative text-center bg-white-400 text-dark-700 mx-[31px] rounded-xl cursor-pointer max-w-[300px] md:max-w-[500px] md:min-w-[300px] md:min-h-[490px] md:max-h-[490px]"
     >
-      <Link href={link}>
-        <a target="_blank">
-            <Image
-              src={isDesktop ? desktop : image}
-              width={isDesktop ? "625" : "320"}
-              height={isDesktop ? "324" : "149"}
-              alt="cover image of my project"
-            />
-        </a>
-      </Link>
+      <Image
+        src={isDesktop ? desktop : image}
+        width={isDesktop ? "625" : "320"}
+        height={isDesktop ? "324" : "149"}
+        alt="cover image of my project"
+      />
       <div className="flex text-start mx-4 flex-col">
         <Heading2 content={title} />
         <div className="flex flex-wrap text-8 font-bold">
@@ -125,18 +126,6 @@ const Project: React.FC<projectProps> = (props) => {
           })}
         </div>
         <Heading3 content={description} />
-        <div className="w-[100%] text-12 text-white-400 p-[2px] md:rounded-b-md md:p-1 text-center absolute bottom-0 right-0 font-semibold bg-dark-400 hover:bg-white-700 transition-colors duration-300 md:text-16">
-          <Link href={link}>
-            <a target="_blank">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                View in Github
-              </motion.button>
-            </a>
-          </Link>
-        </div>
       </div>
     </motion.div>
   );

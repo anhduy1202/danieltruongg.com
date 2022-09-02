@@ -61,7 +61,7 @@ const Experience: React.FC<expProps> = (props) => {
           setChoices={setChoices}
           choices={choices}
         />
-        <section className="mt-3 mx-12 flex md:mx-0 md:mt-0">
+        <section className="mt-3 mx-12 flex md:mx-0 md:mt-0 lg:min-w-[900px] md:min-w-[700px] md:min-h-[235px]">
           {experiences?.map((experience) => {
             return (
               <div className="text-white-400" key={experience.id}>
