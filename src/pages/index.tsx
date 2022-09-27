@@ -73,12 +73,11 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const project = await axios.get(`${process.env.APIURL}/api/projects`);
   const exp = await axios.get(`${process.env.APIURL}/api/experience`);
   const contact = await axios.get(`${process.env.APIURL}/api/contact`);
-  const res = await Promise.all([project, exp, contact]);
   return {
     props: {
-      projectData: res[0].data,
-      expData: res[1].data,
-      contactData: res[2].data,
+      projectData: project.data,
+      expData: exp.data,
+      contactData: contact.data,
     },
   };
 };
