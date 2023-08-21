@@ -2,6 +2,93 @@ import { projectType } from "../../../interface/interface";
 
 export const projects: projectType[] = [
   {
+    id: 8,
+    thumbnail: "/fullyhacks.png",
+    desktop: "/fullyhacks.png",
+    link: "https://github.com/anhduy1202/fullyhacks",
+    title: "FullyHacks 2023",
+    languages: [
+      {
+        key: "100",
+        name: "Next.js",
+        icon: "/nextjs.svg",
+      },
+      {
+        key: "102",
+        name: "TypeScript",
+        icon: "/typescript.svg",
+      },
+      {
+        key: "101",
+        name: "TailwindCSS",
+        icon: "/tailwind.svg",
+      },
+      {
+        key: "103",
+        name: "Prisma",
+        icon: "/prisma.svg",
+      },
+      {
+        key: "104",
+        name: "MongoDB",
+        icon: "/mongodb.svg",
+      },
+
+    ],
+    description: "Full-stack hackathon website for CSUF, with application feature, authentication, user poral, user feed, admin portal,..."
+  },
+  {
+    id: 9,
+    thumbnail: "/wordcloud.png",
+    desktop: "/wordcloud.png",
+    link: "https://github.com/anhduy1202/wordcloud-vote",
+    title: "WordCloud Vote",
+    languages: [
+      {
+        key: "100",
+        name: "Next.js",
+        icon: "/nextjs.svg",
+      },
+      {
+        key: "102",
+        name: "TypeScript",
+        icon: "/typescript.svg",
+      },
+      {
+        key: "101",
+        name: "TailwindCSS",
+        icon: "/tailwind.svg",
+      },
+      {
+        key: "103",
+        name: "Prisma",
+        icon: "/prisma.svg",
+      },
+      {
+        key: "104",
+        name: "MongoDB",
+        icon: "/mongodb.svg",
+      },
+
+    ],
+    description: "WordCloud Vote is a web-based application that provides a secure, anonymous, and transparent platform for online voting"
+  },
+  {
+    id: 7,
+    thumbnail: "/gameboy.png",
+    desktop: "/gameboy.png",
+    link: "https://github.com/anhduy1202/gameboySimulator",
+    title: "Gameboy Simulator",
+    languages: [
+      {
+        key: "99",
+        name: "Python",
+        icon: "/python.svg",
+      },
+    ],
+    description: "A PyQT desktop application to convert image /webcam to gameboy style applying Computer Vision, image procesing"
+  },
+  {
     id: 1,
     thumbnail: "/spotify.png",
     desktop: "/spotify_desktop.jpg",

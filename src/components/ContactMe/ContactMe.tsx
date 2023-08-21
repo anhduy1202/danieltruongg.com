@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { contactType } from '../../interface/interface';
-import Heading1, { Heading2 } from '../Heading/Heading';
+import Heading1 from '../Heading/Heading';
 import { Spacing2 } from '../Spacing/Spacing';
 import { textVariants } from '../Greeting/Greeting';
 
@@ -30,9 +30,7 @@ const ContactMe: React.FC<contactProps> = props => {
                 whileInView="onscreen"
                 viewport={{ once: true }}
                 variants={textVariants}
-            >
-                <Heading2 content="Currently active looking for Summer 2023 Software Engineer internship" />
-            </motion.div>
+            ></motion.div>
             <motion.div
                 initial="offscreen"
                 whileInView="onscreen"
@@ -87,7 +85,7 @@ const Footer: React.FC = () => {
                 Designed and made with 💙 by
                 <span className="font-semibold"> Daniel Truong </span>
             </p>
-            <p className="font-semibold"> @2022 </p>
+            <p className="font-semibold"> @2023 </p>
         </footer>
     );
 };

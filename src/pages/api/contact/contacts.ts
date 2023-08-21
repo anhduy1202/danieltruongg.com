@@ -3,7 +3,7 @@ import { contactType } from "../../../interface/interface";
 export const contacts: contactType[] = [
   {
     id: "c1",
-    link: "https://www.linkedin.com/in/truong-duy-1122001/",
+    link: "https://www.linkedin.com/in/danieltruongg/",
     logo: "/linkedin.svg",
   },
   {

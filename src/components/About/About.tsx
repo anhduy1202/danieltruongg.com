@@ -43,6 +43,7 @@ const About: React.FC<aboutProps> = props => {
                     <Image
                         src="/avatar_desktop.png"
                         alt="Daniel Truong's avatar"
+                        className='rounded-[50%]'
                         width={isDesktop ? 180 : 80}
                         height={isDesktop ? 180 : 80}
                     />

@@ -2,22 +2,37 @@ import { experienceType } from "../../../interface/interface";
 
 export const experiences: experienceType[] = [
   {
+    id: "exp7",
+    companies: "Amazon Web Services (AWS)",
+    role: "SDE Intern",
+    date: "May 2023 - Aug 2023",
+    link: "https://www.amazon.com",
+    description: [
+      "💙 Developed a monitoring dashboard, integrating it to an internal data analytics service to promptly detect several metrics, resulting in increasing the detection process by 80% and automate the data collection process entirely",
+      "💙 Led the data transformation process using PySpark, AWS Glue, and AWS S3 to process 300 builds daily and prepare data for analysis and created dashboard with AWS QuickSight sourcing data from the internal datalake.",
+      "💙 Key contributor to an organization-level project, a new internal service tool for doc writers. Pioneered the implementation of Kahn’s Algorithm to handle 9000+ entities data for a pivotal logic feature and collaborated with frontend engineers to develop the project’s UI using TypeScript."
+    ],
+  },
+  {
     id: "exp6",
     companies: "Amazon",
-    role: "Incoming SDE Intern",
-    date: "Summer 2023",
+    role: "Student Research Fellow",
+    date: "Feb 2023 - Aug 2023",
     link: "https://www.amazon.com",
-    description: [],
+    description: [
+      "💙 Selected as one of 10 CSUF students for the prestigious Amazon Student Fellowship program, collaborating with a team of 4 fellow students and developed a transgender resource mobile web application from inception to completion, incorporating stakeholder interviews, research, and data collection.",
+      "💙 Achieved 2nd place among 14 teams in the Engineering competition by CSUF, showcasing strong teamwork, communication, and coding skills.",
+    ],
   },
   {
     id: "exp4",
     companies: "acmCSUF",
-    role: "Dev Project Manager",
-    date: "Jan 2022 - Present",
+    role: "Vice President",
+    date: "May 2023 - Present",
     link: "https://acmcsuf.com",
     description: [
-      "💙 Conducted educational sessions such as Intro to GitHub, Working with APIs,... for new team members weekly as a subject matter expert (SME) for the ECS Showcase 2022",
-      "💙 Hosted technical workshop and provided leadership assistance for developer team members related to semester-long project such as Canvas-Notion Integration, Food Tinder",
+      "💙 Empowered a community of over 1000 tech enthusiasts as Vice President of ACM CSUF, fostering an inclusive and thriving tech club on campus.",
+      "💙 Led the successful organization of FullyHacks, CSUF’s inaugural and largest in-person hackathon with more than 200 participants, providing a platform for students to showcase their innovation and coding prowess.",
     ],
   },
   {
