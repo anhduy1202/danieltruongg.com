@@ -68,7 +68,7 @@ const Projects: React.FC<projectsProps> = (props) => {
         <div className="mt-16 md:mt-20">
           <Link href="https://github.com/anhduy1202">
             <a target="_blank">
-              <Heading2 content="See more in my Github" />
+              <Heading2 content="See more on my Github" />
             </a>
           </Link>
         </div>
@@ -99,7 +99,7 @@ const Project: React.FC<projectProps> = (props) => {
       variants={projectVariant}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 1 }}
-      className="mt-10 relative text-center bg-white-400 text-dark-700 mx-[31px] rounded-xl cursor-pointer max-w-[300px] md:max-w-[500px] md:min-w-[300px] md:min-h-[490px] md:max-h-[490px]"
+      className="mt-10 relative text-center bg-white/10 text-white mx-[31px] rounded-xl cursor-pointer max-w-[300px] md:max-w-[500px] md:min-w-[300px] md:min-h-[490px] md:max-h-[490px]"
     >
       <Image
         src={isDesktop ? desktop : image}
@@ -109,12 +109,12 @@ const Project: React.FC<projectProps> = (props) => {
       />
       <div className="flex text-start mx-4 flex-col">
         <Heading2 content={title} />
-        <div className="flex flex-wrap text-8 font-bold">
+        <div className="flex flex-wrap gap-1 mb-2 text-8 font-bold">
           {languages.map((language, id) => {
             return (
               <div
                 key={language.key}
-                className="flex mr-2 mb-2 bg-blue-400 py-1 px-2 rounded-md"
+                className="flex mr-2 mb-2 bg-sky-600 py-1 px-2 rounded-md"
               >
                 <Language
                   isDesktop={isDesktop}

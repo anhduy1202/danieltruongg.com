@@ -13,11 +13,10 @@ const About: React.FC<aboutProps> = props => {
     const { isDesktop } = props;
     const content = (
         <>
-            I’m an international student from Vietnam who started programming back in 2020 and
+            I’m from Vietnam, started programming back in 2020 and
             turned it into a hobby
-            <br /> <br /> My experience is mostly about full-stack development but I also explore
-            other fields like Data Science & Machine Learning
-            <br /> <br /> Besides from programming, I also do mobile/web design, listen to music, go
+            <br /> <br /> My focus is fullstack web development, but I also create and explore other fields such as Data Science, Machine Learning
+            <br /> <br /> Besides from programming, I also do graphic design, listen to music, go
             to the gym, and create content for my Youtube channel
         </>
     );

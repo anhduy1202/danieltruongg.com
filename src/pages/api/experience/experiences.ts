@@ -2,6 +2,15 @@ import { experienceType } from "../../../interface/interface";
 
 export const experiences: experienceType[] = [
   {
+    id: "exp8",
+    companies: "AWS Docs",
+    role: "Software Engineer",
+    date: "July 2024",
+    link: "https://docs.aws.amazon.com/",
+    description: [
+    ],
+  },
+  {
     id: "exp7",
     companies: "Amazon Web Services (AWS)",
     role: "SDE Intern",
@@ -15,7 +24,7 @@ export const experiences: experienceType[] = [
   },
   {
     id: "exp6",
-    companies: "Amazon",
+    companies: "Amazon x CSUF",
     role: "Student Research Fellow",
     date: "Feb 2023 - Aug 2023",
     link: "https://www.amazon.com",

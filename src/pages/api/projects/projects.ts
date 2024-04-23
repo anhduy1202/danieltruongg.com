@@ -2,11 +2,36 @@ import { projectType } from "../../../interface/interface";
 
 export const projects: projectType[] = [
   {
+    id: 10,
+    thumbnail: "/bunnyhacks.png",
+    desktop: "/bunnyhacks_desktop.png",
+    link: "https://github.com/anhduy1202/bunnyhacks",
+    title: "BunnyHacks 2024",
+    languages: [
+      {
+        key: "-1",
+        name: "Next.js",
+        icon: "/nextjs.svg",
+      },
+      {
+        key: "-2",
+        name: "TypeScript",
+        icon: "/typescript.svg",
+      },
+      {
+        key: "101",
+        name: "TailwindCSS",
+        icon: "/tailwind.svg",
+      },
+    ],
+    description: "ACM at CSUF 1-week virtual website hackathon for Spring 2024, animation built using GSAP"
+  },
+  {
     id: 8,
     thumbnail: "/fullyhacks.png",
-    desktop: "/fullyhacks.png",
+    desktop: "/fullyhacks_desktop.png",
     link: "https://github.com/anhduy1202/fullyhacks",
-    title: "FullyHacks 2023",
+    title: "FullyHacks 2024",
     languages: [
       {
         key: "100",
@@ -35,7 +60,83 @@ export const projects: projectType[] = [
       },
 
     ],
-    description: "Full-stack hackathon website for CSUF, with application feature, authentication, user poral, user feed, admin portal,..."
+    description: "Fullstack hackathon website for CSUF, with application feature, authentication, user poral, user feed, admin portal,..."
+  },
+  {
+    id: 999,
+    thumbnail: "/yvcse.png",
+    desktop: "/yvcse.png",
+    link: "https://github.com/anhduy1202/YVCSE",
+    title: "Youtube Video Comment Sentiment Explorer",
+    languages: [
+      {
+        key: "1000",
+        name: "Next.js",
+        icon: "/nextjs.svg",
+      },
+      {
+        key: "1020",
+        name: "JavaScript",
+        icon: "/javascript.svg",
+      },
+      {
+        key: "1010",
+        name: "TailwindCSS",
+        icon: "/tailwind.svg",
+      },
+      {
+        key: "1030",
+        name: "Prisma",
+        icon: "/prisma.svg",
+      },
+      {
+        key: "1040",
+        name: "Python",
+        icon: "/python.svg",
+      },
+      {
+        key: "1050",
+        name: "FastAPI",
+        icon: "/fastapi.svg",
+      },
+
+    ],
+    description: "Paste a Youtube video URL and get the sentiment of the comments on the video using HumeAI model"
+  },
+  {
+    id: 91,
+    thumbnail: "/mcb.png",
+    desktop: "/mcb_desktop.png",
+    link: "https://github.com/anhduy1202/MyClubBoard",
+    title: "MyClubBoard",
+    languages: [
+      {
+        key: "10000",
+        name: "Next.js",
+        icon: "/nextjs.svg",
+      },
+      {
+        key: "10002",
+        name: "TypeScript",
+        icon: "/typescript.svg",
+      },
+      {
+        key: "10001",
+        name: "TailwindCSS",
+        icon: "/tailwind.svg",
+      },
+      {
+        key: "10003",
+        name: "Bun",
+        icon: "/bun.svg",
+      },
+      {
+        key: "10004",
+        name: "PlanetScale",
+        icon: "/planetscale.svg",
+      },
+    ],
+    description: "MyClubBoard is a website that help students find and apply for club officer posisitions easily, it also allows club officers to post position and monitor the process smoothly"
   },
   {
     id: 9,
@@ -110,22 +211,6 @@ export const projects: projectType[] = [
       "A Data Science and Machine Learning project for my Summer 2022 research to analyze Spotify hot songs from 2017 to 2022, and a recommendation system that suggest songs based on personal playlist",
   },
   {
-    id: 2,
-    thumbnail: "/devwork.png",
-    desktop: "/devwork_desktop.jpg",
-    link: "",
-    title: "DevWork",
-    languages: [
-      {
-        key: "21",
-        name: "MySQL",
-        icon: "/mysql.svg",
-      },
-    ],
-    description:
-      "A MySQL Database for a job freelancing website that helps freelancing developers finding the appropriate client and get paid for their services",
-  },
-  {
     id: 3,
     thumbnail: "/tuffyfood.png",
     desktop: "/tuffyfood_desktop.jpg",
@@ -171,52 +256,5 @@ export const projects: projectType[] = [
     ],
     description:
       "A mobile web social media inspired by Reddit with features such as feeds, news, upload posts, upvote, downvote, comment, chat, follow, ranking,...",
-  },
-  {
-    id: 5,
-    thumbnail: "/gitreadme.png",
-    desktop: "/gitreadme_desktop.jpg",
-    link: "https://github.com/anhduy1202/Git-Readme",
-    title: "Git Readme",
-    languages: [
-      {
-        key: "51",
-        name: "React",
-        icon: "/react.svg",
-      },
-    ],
-    description:
-      "A website that helps Github user customize their Readme easier by copy-pasting codes from website to embedd badges, stats, ..f",
-  },
-  {
-    id: 6,
-    thumbnail: "/betterttt.png",
-    link: "https://github.com/anhduy1202/better-tic-tac-toe-client",
-    desktop: "/betterttt-desktop.jpg",
-    title: "Better Tic-Tac-Toe",
-    languages: [
-      {
-        key: "61",
-        name: "React",
-        icon: "/react.svg",
-      },
-      {
-        key: "62",
-        name: "NodeJS",
-        icon: "/nodejs.svg",
-      },
-      {
-        key: "63",
-        name: "Socket.io",
-        icon: "/socketio.svg",
-      },
-      {
-        key: "64",
-        name: "Firebase",
-        icon: "/firebase.svg",
-      },
-    ],
-    description:
-      "A tic-tac-toe multiplayer website that allows users to create their personal room, join other rooms and compete with each other",
-  },
+  }
 ];

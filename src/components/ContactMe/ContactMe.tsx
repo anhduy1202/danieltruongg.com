@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
                 Designed and made with 💙 by
                 <span className="font-semibold"> Daniel Truong </span>
             </p>
-            <p className="font-semibold"> @2023 </p>
+            <p className="font-semibold"> @2024 </p>
         </footer>
     );
 };
